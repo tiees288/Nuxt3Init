@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Mapping Class */
+@layer components {
+
+    .btn-success :hover {
+        @apply bg-green-700;
+    }
+
+    .menu-item1 {
+        @apply inline-block lg:mt-0 text-white mr-4 text-lg
+    }
+
+    .menu-item1:hover {
+        @apply  text-white font-semibold
+    }
+
+    .menu-btn-mobile {
+        @apply inline-flex items-center p-2 ml-1 text-sm text-white rounded-lg  hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-white
+        md:hidden
+    }
+
+
+}
