@@ -1,36 +1,27 @@
 <template>
-  <div class="mt-12">name: {{name}}</div>
-  <Tutorial />
+  <div class="mt-12">name: {{ name }}</div>
+  <div class="mt-12">Message: {{ helloWorld() }}</div>
+  <input name="firstname" v-model="formData.firstname" />
 </template>
 
 <script setup lang="ts">
-  const data = useState<string>()
-</script>
-
-<script lang="ts">
-import Vue from 'vue'
-
-export default {
-  name: 'IndexPage',
-  data() {
-
-    return {
-      name: 'Krittawat'
-    }
-  },
-  fetch() {
-  },
-  mounted() {
-    let locale = localStorage.getItem('Locale') ?? undefined
-    if (!locale) {
-      localStorage.setItem('Locale', JSON.stringify({ Locale: 'EN' }))
-    } else {
-      console.log(`Locale: ${locale}`)
-    }
-  },
-  methods: {
-    async test () {
-    }
-  }
+interface FormData {
+  firstname: string
+  lastname: string
 }
+let formData: FormData = {
+  firstname: '',
+  lastname: ''
+}
+
+const name = '123'
+const data = useState<string>()
+const meta = useHead({
+  title: `Index - Nuxt 3`
+})
+
+const helloWorld = () => {
+  return 'Hello Message'
+}
+
 </script>
