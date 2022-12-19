@@ -15,8 +15,10 @@
   },
   "dependencies": {
     "@types/yup": "^0.32.0",
+    "axios": "^1.2.1",
     "vee-validate": "^4.7.3",
     "vue": "^3.2.45",
+    "vue-query": "^1.26.0",
     "vue-router": "^4.1.6",
     "yup": "^0.32.11"
   }

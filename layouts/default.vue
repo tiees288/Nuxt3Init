@@ -1,14 +1,14 @@
 <template>
   <div>
-    <Header message="Header Component" />
-  <!-- <slot /> -->
-  <NuxtPage/>
+    <Header message="<Header Component Props>" />
+    <!-- <slot /> -->
+    <NuxtPage />
   </div>
 </template>
 
 <script setup lang="ts">
-
-
+import { useQueryProvider } from "vue-query";
+useQueryProvider();
 </script>
 
 <!-- <script lang="ts">
