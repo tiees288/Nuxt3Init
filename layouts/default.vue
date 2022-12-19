@@ -8,7 +8,22 @@
 
 <script setup lang="ts">
 import { useQueryProvider } from "vue-query";
-useQueryProvider();
+
+const router = useRouter()
+const pageName = router.currentRoute?.value.name?.toString()
+const meta = useHead({
+  title: `${pageName} - Nuxt 3`
+})
+
+// Init Vue Query Option
+useQueryProvider({
+  defaultOptions: {
+    queries: {
+    refetchOnWindowFocus: false
+    }
+  }
+});
+
 </script>
 
 <!-- <script lang="ts">

@@ -8,19 +8,18 @@
       </li>
     </ul>
     <button class="bg-blue-400 text-white px-3 py-1 rounded-md" @click="callRefetch()">Refresh</button>
+
+    <div class="">
+      <p>{{ `Load config: ${config.urlApi}` }}</p>
+    </div>
   </div>
 </template>
    
 <script setup lang="ts">
 import { use } from 'h3';
 
-const meta = useHead({
-  title: `Users - Nuxt 3`
-})
 const { data: userData, isError, isLoading, refetch, isRefetching } = userServices.FetchUser();
-
-const test = new Proxy()
-
+const config = useAppConfig()
 
 const callRefetch = () => {
   userData?.value &&

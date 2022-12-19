@@ -1,8 +1,6 @@
 export default defineAppConfig({
-  meta: {
-    title: 'Hello Nuxt',
-
-  }
+  title: 'Initial Nuxt3 Test',
+  urlApi: 'http://apihere.test',
   // theme: {
   //   dark: true,
   //   colors: {
