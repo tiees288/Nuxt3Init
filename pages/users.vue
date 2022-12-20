@@ -17,6 +17,8 @@
    
 <script setup lang="ts">
 import { use } from 'h3';
+import userServices from '~~/utils/serviceApi/userServices';
+// import serviceApi from '~~/utils/serviceApi';
 
 const { data: userData, isError, isLoading, refetch, isRefetching } = userServices.FetchUser();
 const config = useAppConfig()
