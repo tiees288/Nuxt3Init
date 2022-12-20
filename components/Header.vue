@@ -1,7 +1,7 @@
 <template>
   <nav class="flex items-center justify-between flex-wrap bg-blue-500 p-3 drop-shadow-md">
     <div class="flex items-center flex-shrink-0 text-white mr-10">
-      <a href="/" class="text-xl tracking-tight font-bold">Krittawat Vue - {{ props.message }}</a>
+      <NuxtLink to="/" class="text-xl tracking-tight font-bold">Krittawat Vue - {{ props.message }}</NuxtLink>
     </div>
     <div class="visible md:invisible">
       <button data-collapse-toggle="mega-menu-full" type="button" class="menu-btn-mobile" aria-expanded="false">
@@ -16,10 +16,10 @@
     </div>
     <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto justify-between">
       <div class="text-sm lg:flex-grow hidden md:inline">
-        <a href="/Users" class="menu-item1"> User List </a>
-        <a href="/Experince" class="menu-item1"> Experience </a>
-        <a href="/About" class="menu-item1"> About me </a>
-        <a href="/Contact" class="menu-item1"> Contact </a>
+        <NuxtLink to="/Users" class="menu-item1"> User List </NuxtLink>
+        <NuxtLink to="/Experince" class="menu-item1"> Experience </NuxtLink>
+        <NuxtLink to="/About" class="menu-item1"> About me </NuxtLink>
+        <NuxtLink to="/Contact" class="menu-item1"> Contact </NuxtLink>
       </div>
     </div>
   </nav>

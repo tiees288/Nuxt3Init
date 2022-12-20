@@ -1,5 +1,3 @@
-import serviceApi from './serviceApi'
+import api from './serviceApi'
 
-export const { 
-     userServices,
-} = serviceApi
+export const userServices = api?.userServices

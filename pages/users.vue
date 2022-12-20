@@ -1,3 +1,29 @@
+<script setup lang="ts">
+import { use } from 'h3';
+// import userServices from '~/utils/serviceApi/userServices';
+
+const { data: userData, isError, isLoading, refetch, isRefetching } = userServices.FetchUser();
+const config = useAppConfig()
+const name = useState('name', () => {
+  return '1234aabb'
+})
+
+// onMounted(() => {
+//   console.log(`Mounted ${localStorage.getItem('name')}`)
+
+// })
+
+const callRefetch = () => {
+  userData?.value &&
+    userData?.value.forEach((user, index) => {
+      const userObj = toRaw(user)
+      console.log(userObj.name)
+    })
+
+  refetch.value()
+}
+</script>
+
 <template>
   <div class="mx-12 mt-12">
     <h2 class="font-bold">List of Users by Vue-Query</h2>
@@ -15,24 +41,3 @@
   </div>
 </template>
    
-<script setup lang="ts">
-import { use } from 'h3';
-import userServices from '~~/utils/serviceApi/userServices';
-// import serviceApi from '~~/utils/serviceApi';
-
-const { data: userData, isError, isLoading, refetch, isRefetching } = userServices.FetchUser();
-const config = useAppConfig()
-
-const callRefetch = () => {
-  userData?.value &&
-    userData?.value.forEach((user, index) => {
-      const userObj = toRaw(user)
-      console.log(userObj.name)
-    })
-
-  refetch.value()
-}
-
-
-
-</script>

@@ -13,7 +13,7 @@ export default defineNuxtConfig({
      },
      imports: {
           autoImport: true,
-          dirs: ['~/interfaces/']
+          dirs: ['/interfaces/', '/utils/serviceApi']
      },
      css: ['~/assets/css/main.css'],
      postcss: {
