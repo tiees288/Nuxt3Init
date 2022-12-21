@@ -4,14 +4,12 @@ import { use } from 'h3';
 
 const { data: userData, isError, isLoading, refetch, isRefetching } = userServices.FetchUser();
 const config = useAppConfig()
-const name = useState('name', () => {
-  return '1234aabb'
+const btnRef = ref(null)
+
+onMounted(() => {
+  // console.log(btnRef.value)
+
 })
-
-// onMounted(() => {
-//   console.log(`Mounted ${localStorage.getItem('name')}`)
-
-// })
 
 const callRefetch = () => {
   userData?.value &&
@@ -33,7 +31,7 @@ const callRefetch = () => {
         {{ `${user.id} ${user.name} ${user.PhoneNumber} ${user.createdAt}` }}
       </li>
     </ul>
-    <button class="bg-blue-400 text-white px-3 py-1 rounded-md" @click="callRefetch()">Refresh</button>
+    <button ref="btnRef" class="bg-blue-400 text-white px-3 py-1 rounded-md" @click="callRefetch()">Refresh</button>
 
     <div class="">
       <p>{{ `Load config: ${config.urlApi}` }}</p>

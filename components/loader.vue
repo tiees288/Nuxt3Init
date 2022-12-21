@@ -10,11 +10,9 @@ const nuxtApp = useNuxtApp();
 const loading = useState('loading', () => false)
 
 nuxtApp.hook("page:start", () => {
-     console.log('Start Load')
      loading.value = true;
 });
 nuxtApp.hook("page:finish", () => {
-     console.log('End Load')
      loading.value = false;
 });
 

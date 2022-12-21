@@ -1,9 +1,10 @@
 export default defineNuxtRouteMiddleware((to, from) => {
+  const cookie = useCookie('token')
 
-  //    console.log(to)
-  //    console.log(from)
-  // if (to.params.id === '1') {
-  //   return abortNavigation()
-  // }
-  // return navigateTo('/')
+  // Check Authorized
+  if (!cookie.value) {
+    // return createError({ statusCode: 403, statusMessage: 'Unauthorized' })
+  } else {
+
+  }
 })
