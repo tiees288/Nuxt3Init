@@ -11,6 +11,9 @@ const meta = useHead({
 
 // Object for username
 const authenUser = useAuthenData()
+onMounted(() => {
+  
+})
 
 // Init Vue Query Option
 useQueryProvider({
@@ -27,7 +30,6 @@ useQueryProvider({
   <div>
     <Header message="<Header Component Props>" />
     <NuxtPage />
-    <div>{{ authenUser.name }}</div>
   </div>
 <Loader/>
 </template>

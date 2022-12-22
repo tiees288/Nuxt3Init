@@ -1,15 +1,10 @@
 <script setup lang="ts">
-import { use } from 'h3';
 // import userServices from '~/utils/serviceApi/userServices';
 
 const { data: userData, isError, isLoading, refetch, isRefetching } = userServices.FetchUser();
 const config = useAppConfig()
 const btnRef = ref(null)
 
-onMounted(() => {
-  // console.log(btnRef.value)
-
-})
 
 const callRefetch = () => {
   userData?.value &&
