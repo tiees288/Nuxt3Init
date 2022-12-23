@@ -2,19 +2,11 @@
 import { useQueryProvider } from "vue-query";
 import { useAuthenData } from "~~/composables/state";
 
-const nuxtApp = useNuxtApp();
-const router = useRouter()
-const pageName = router.currentRoute?.value.name?.toString()
-const meta = useHead({
-  title: `${pageName} - Nuxt 3`
+const head = useLocaleHead({
+  addDirAttribute: true,
+  identifierAttribute: 'id',
+  addSeoAttributes: true
 })
-
-// Object for username
-const authenUser = useAuthenData()
-onMounted(() => {
-  
-})
-
 // Init Vue Query Option
 useQueryProvider({
   defaultOptions: {
@@ -27,18 +19,11 @@ useQueryProvider({
 </script>
 
 <template>
-  <div>
-    <Header message="<Header Component Props>" />
+  <Html :lang="head?.htmlAttrs?.lang" :dir="head?.htmlAttrs?.dir">
+  <Header message="<Header Component Props>" />
+  <Body>
     <NuxtPage />
-  </div>
-<Loader/>
+    <Loader />
+  </Body>
+  </Html>
 </template>
-
-
-
-<!-- <script lang="ts">
-import Vue from "vue";
-export default {
-  name: "default",
-};
-</script> -->

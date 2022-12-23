@@ -1,18 +1,21 @@
 <script setup lang="ts">
 // import userServices from '~/utils/serviceApi/userServices';
 
+import { title } from 'process';
+
 const { data: userData, isError, isLoading, refetch, isRefetching } = userServices.FetchUser();
-const config = useAppConfig()
 const btnRef = ref(null)
 
+const { t } = useI18n()
+const config = useAppConfig()
+const meta = useHead({ title: `${t('pagesTitle.users')} - ${config?.title}` })
 
 const callRefetch = () => {
   userData?.value &&
     userData?.value.forEach((user, index) => {
       const userObj = toRaw(user)
-      console.log(userObj.name)
+      // console.log(userObj.name)
     })
-
   refetch.value()
 }
 </script>

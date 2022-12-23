@@ -5,6 +5,7 @@
 <script setup lang="ts">
 const router = useRouter()
 const route = useRoute()
-
+const config = useAppConfig()
+const meta = useHead({ title: `About - ${config?.title}` })
 
 </script>

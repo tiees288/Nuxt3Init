@@ -2,14 +2,17 @@
 export default defineNuxtConfig({
      app: {
           head: {
-               charset: 'utf-16',
+               charset: 'utf-8',
                viewport: 'width=500, initial-scale=1',
                title: 'Initial NuxtTS',
-               meta: [
-                    // <meta name="description" content="My amazing site">
-                    { name: 'description', content: 'My amazing site.' }
-               ],
-          },
+               // en: {
+
+               //      meta: [
+               //           // <meta name="description" content="My amazing site">
+               //           { name: 'description', content: 'My amazing site.' }
+               //      ],
+               // },
+          }
      },
      imports: {
           autoImport: true,
@@ -22,4 +25,26 @@ export default defineNuxtConfig({
                autoprefixer: {},
           },
      },
+     modules: [
+          '@nuxtjs/i18n',
+     ],
+     i18n: {
+          baseUrl: '/',
+          defaultLocale: 'th',
+          strategy: 'prefix',
+          customRoutes: 'page',
+          detectBrowserLanguage: {
+               useCookie: true,
+               cookieKey: 'lang',
+          },
+          langDir: 'lang/',
+          locales: [
+               { code: 'en', name: 'English', file: 'EN.json', iso: 'en' },
+               { code: 'th', name: 'ไทย', file: 'TH.json', iso: 'th' },
+          ],
+          vueI18n: {
+               legacy: false,
+               locale: 'th',
+          }
+     }
 })

@@ -1,20 +1,12 @@
 <template>
- 
+     Index Page
 </template>
 
 <script setup lang="ts">
-import { Form, Field, ErrorMessage, useForm } from 'vee-validate';
-import * as yup from 'yup';
+const router = useRouter()
+const route = useRoute()
+const config = useAppConfig()
+const meta = useHead({ title: `Index - ${config?.title}` })
 
-interface FormData {
-  email: string
-  password: string
-}
-
-const meta = useHead({
-  title: `Index - Nuxt 3`
-})
-
-useRouter().push('/th')
 
 </script>
