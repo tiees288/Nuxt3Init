@@ -50,10 +50,18 @@ const availableLocales = computed(() => {
   return langList.filter(i => i.code !== locale.value)
 })
 
-const nuxtApp = useNuxtApp();
+const { t } = useI18n()
 const router = useRouter()
 const appConfig = useAppConfig()
 const authenUser = useAuthenData()
+
+const currentPage = useRoute()
+watchEffect(() => {
+  let pageeName = currentPage.name?.toString().split('__')?.[0]?.toLowerCase();
+  useHead({
+    title: `${t(`pagesTitle.${pageeName}`)} - ${appConfig?.title}`
+  })
+})
 
 // Object for username
 onMounted(() => {
@@ -69,8 +77,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 
 </script>
-
-
 <style scoped>
 
 </style>

@@ -5,10 +5,7 @@ import { title } from 'process';
 
 const { data: userData, isError, isLoading, refetch, isRefetching } = userServices.FetchUser();
 const btnRef = ref(null)
-
-const { t } = useI18n()
 const config = useAppConfig()
-const meta = useHead({ title: `${t('pagesTitle.users')} - ${config?.title}` })
 
 const callRefetch = () => {
   userData?.value &&

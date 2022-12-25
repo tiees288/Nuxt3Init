@@ -1,7 +1,9 @@
 {
      "header": "Init I18n English",
      "pagesTitle": {
+          "index": "Index Page",
           "users": "Users",
-          "experience": "Experience"
+          "experience": "Experience",
+          "about": "About me"
      }
 }

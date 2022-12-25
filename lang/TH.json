@@ -1,8 +1,9 @@
 {
      "header": "Init I18n ไทย",
      "pagesTitle": {
+          "index": "หน้าหลัก",
           "users": "ผู้ใช้งาน",
-          "experience": "ประสบการณ์"
-,
+          "experince": "ประสบการณ์",
+          "about": "เกี่ยวกับเรา"
      }
 }

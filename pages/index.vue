@@ -6,7 +6,5 @@
 const router = useRouter()
 const route = useRoute()
 const config = useAppConfig()
-const meta = useHead({ title: `Index - ${config?.title}` })
-
 
 </script>
